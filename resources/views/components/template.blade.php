@@ -10,12 +10,16 @@
 </head>
 
 <body>
-    @include('components.nav')
+    @if (!request()->routeIs('login') && !request()->routeIs('register'))
+        @include('components.nav')
+    @endif
 
-    <div class="my-10 mx-20">
+    <div>
         @yield('content')
     </div>
 
+
 </body>
+
 
 </html>
